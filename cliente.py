@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 import socket
 from calendar import*;
@@ -5,21 +6,16 @@ from time import*;
 
 cliente = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
-while True:
-	#Data e hora testes
+mensagem_envio = asctime(localtime(time()))
 
-	#print(time())
-	#print (localtime(time()))
-	#print(asctime(localtime(time())))
+#mensagem_envio = input("digitar qualque coisa: ") #se quiser receber mensagem do user
 
-	mensagem_envio = asctime(localtime(time()))
-	#print(mensagem_envio)
+#cliente.sendto(mensagem_envio.encode(),("192.168.0.103",12000)) # rede de casa virada pra lua 2
+cliente.sendto(mensagem_envio.encode(),("172.20.10.9",12000)) #meu celular rede
 
-	#mensagem_envio = input("digitar qqqualque coisa: ")
+mensagem_bytes, endereco_ip_servidor = cliente.recvfrom(2048)
 
-	cliente.sendto(mensagem_envio.encode(),("172.17.0.1",12000))
+print(mensagem_bytes.decode())
 
-	mensagem_bytes, endereco_ip_servidor = cliente.recvfrom(2048)
-	print(mensagem_bytes.decode())
-
+#-----------------------------------------------------------------
 

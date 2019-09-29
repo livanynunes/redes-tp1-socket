@@ -7,7 +7,7 @@ import socket
 #O SOCK_DGRAM = UDP
 servidor = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
-#Bind é o edereço, se a familia or do tipo AF_INET os paramêtros precisam
+#Bind é o endereço, se a familia for do tipo AF_INET os paramêtros precisam
 # ser o (host,porta)
 
 servidor.bind(('',12000)) #host = própria máquina
@@ -28,4 +28,3 @@ while True:
 	#imprime a hora
 	print(mensagem_resposta)
 #-----------------------------------------------------------------
-#

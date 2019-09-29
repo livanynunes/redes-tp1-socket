@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import socket
 from calendar import*;
 from time import*;

@@ -3,7 +3,7 @@ from calendar import*;
 from time import*;
 
 #função socket, da classe socket:
-#Os parâmetro são familia A_INET, que significa IPV4
+#Os parâmetro são familia AF_INET, que significa IPV4
 ##E o tipo. que pode ser:
 #O SOCK_STREAM = tcp
 #O SOCK_DGRAM = UDP
